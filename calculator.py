@@ -31,40 +31,29 @@ class Calculator():
 
     def sum(self, n1, n2):
         result_number = n1 + n2
-        # result_number = self._first_number + self._second_number
-        # print(f'{self._first_number} + {self._second_number} = {result_number}')
         return result_number
 
     def sub(self, n1, n2):
-        result_number = self._first_number - self._second_number
-        # print(f'{self._first_number} - {self._second_number} = {result_number}')
+        result_number = n1 - n2
         return result_number
 
     def mul(self, n1, n2):
-        result_number = self._first_number * self._second_number
-        # print(f'{self._first_number} * {self._second_number} = {result_number}')
+        result_number = n1 * n2
         return result_number
 
     def div(self, n1, n2):
-        result_number = self._first_number / self._second_number
-        # print(f'{self._first_number} / {self._second_number} = {result_number}')
+        if n2 != 0:
+            result_number = n1 / n2
+        else:
+            raise ValueError("Sorry, no numbers below zero")
         return result_number
 
-    def __call__(self, operation):
+    def __call__(self, n1, n2, operation):
         if operation == '+':
-            print(self.sum())
+            print(self.sum(n1, n2))
         elif operation == '*':
-            print(self.mul())
+            print(self.mul(n1, n2))
         elif operation == '-':
-            print(self.sub())
+            print(self.sub(n1, n2))
         elif operation == '/':
-            if self.first_number != 0:
-                print(self.div())
-            else:
-                raise ValueError("Sorry, no numbers below zero")
-        
-
-# c1 = Calculator()
-# c1.first_number = 0
-# c1.second_number = 0
-# c1('/')
+            print(self.div(n1, n2))
