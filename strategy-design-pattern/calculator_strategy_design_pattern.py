@@ -1,6 +1,5 @@
 from math import factorial
 from abc import ABC, abstractmethod
-from typing import List
 
 class Operation_strategy(ABC):
     @abstractmethod
@@ -34,10 +33,10 @@ class Calculator():
         self._operation = None
 
     def __str__(self):
-        return f'{self._first_number}, {self._second_number}'
+        return f'{self._first_number}, {self._second_number}, {self._operation}'
     
     def __repr__(self):
-        return f'{self.__class__.__name__}({self._first_number}, {self._second_number})'
+        return f'{self.__class__.__name__}({self._first_number}, {self._second_number}, {self._operation})'
     
     @property
     def first_number(self):
