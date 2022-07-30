@@ -1,5 +1,6 @@
 # Simple and basic python Object oriented calculator with test and unittest - design pattern
-## Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object.
+
+Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object.
 
 Usage examples: The Strategy pattern is very common in Python code. It’s often used in various frameworks to provide users a way to change the behavior of a class without extending it.
 
@@ -13,10 +14,10 @@ Make sure you installed nose2
 python -m nose2
 ```
 
-Or basically run 
+Or basically run test files
 
 ```bash
-python test_ ...... .py files
+python test_ ...... .py
 ```
 
 ## Usage
