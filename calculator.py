@@ -43,9 +43,9 @@ class Calculator():
     def div(self, n1, n2):
         if n2 != 0:
             result_number = n1 / n2
+            return result_number
         else:
             raise ValueError("Sorry, no numbers below zero")
-        return result_number
 
     def __call__(self, n1, n2, operation):
         if operation == '+':
