@@ -20,7 +20,6 @@ class Calculator():
     def second_number(self):
         return self._second_number
 
-
     @first_number.setter
     def first_number(self, new_number):
         self._first_number = new_number
@@ -57,3 +56,5 @@ class Calculator():
             print(self.sub(n1, n2))
         elif operation == '/':
             print(self.div(n1, n2))
+
+c1 = Calculator()
