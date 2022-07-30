@@ -18,9 +18,6 @@ def test_div():
 
 if __name__ == "__main__":
 
-    # calculator_object.first_number = 5
-    # calculator_object.second_number = 5
-
     test_sum()
     test_sub()
     test_mul()

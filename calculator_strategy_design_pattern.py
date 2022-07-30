@@ -31,7 +31,7 @@ class Calculator():
     def __init__(self):
         self._first_number = 0
         self._second_number = 0
-        self._result = 0
+        self._operation = None
 
     def __str__(self):
         return f'{self._first_number}, {self._second_number}'
@@ -47,6 +47,14 @@ class Calculator():
     def second_number(self):
         return self._second_number
 
+    @property
+    def operation(self) -> Operation_strategy:
+        return self._operation
+
+    @operation.setter
+    def operation(self, operation: Operation_strategy) -> None:
+        self._operation = operation
+
     @first_number.setter
     def first_number(self, new_number):
         self._first_number = new_number
@@ -55,15 +63,5 @@ class Calculator():
     def second_number(self, new_number):
         self._second_number = new_number
 
-    def __call__(self, operation_strategy:Operation_strategy):
-        return (operation_strategy.do_operation(self.first_number, self.second_number))
-
-c1 = Calculator()
-
-c1.first_number = 1
-c1.second_number = 2
-
-print(c1(Sum_strategy()))
-print(c1(Sub_strategy()))
-print(c1(Div_strategy()))
-print(c1(Mul_strategy()))
+    def __call__(self):
+        return (self._operation.do_operation(self.first_number, self.second_number))
