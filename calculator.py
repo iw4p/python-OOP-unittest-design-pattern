@@ -43,7 +43,7 @@ class Calculator():
     def sub(self, n1, n2):
         self._first_number = n1
         self._second_number = n2
-        result_number = self._first_number / self._second_number
+        result_number = self._first_number - self._second_number
         return result_number
 
     def mul(self, n1, n2):
