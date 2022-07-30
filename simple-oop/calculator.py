@@ -73,6 +73,8 @@ class Calculator():
 
 
     def __call__(self, n1, n2, operation):
+        self._first_number = n1
+        self._second_number = n2
         if operation == '+':
             return (self.sum(self._first_number, self._second_number))
         elif operation == '*':
