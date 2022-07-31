@@ -27,8 +27,8 @@ class Observable():
 class Weather():
 
     def __init__(self, latitude, longitude):
-        self.latitude = latitude
-        self.longitude = longitude
+        self._latitude = latitude
+        self._longitude = longitude
         temperature = None
 
     def __str__(self):
@@ -36,6 +36,22 @@ class Weather():
 
     def __repr__(self):
         return f'{self.__class__.__name__}({self.latitude}, {self.longitude})'
+
+    @property
+    def latitude(self):
+        return self._latitude
+    
+    @property
+    def longitude(self):
+        return self._longitude
+
+    @latitude.setter
+    def latitude(self, other):
+        self._latitude = other
+    
+    @longitude.setter
+    def longitude(self, other):
+        self._longitude = other
 
     def get_data(self):
         response = requests.get(

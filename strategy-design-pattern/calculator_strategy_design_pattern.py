@@ -1,4 +1,3 @@
-from math import factorial
 from abc import ABC, abstractmethod
 
 class Operation_strategy(ABC):
@@ -50,10 +49,6 @@ class Calculator():
     def operation(self) -> Operation_strategy:
         return self._operation
 
-    @operation.setter
-    def operation(self, operation: Operation_strategy) -> None:
-        self._operation = operation
-
     @first_number.setter
     def first_number(self, new_number):
         self._first_number = new_number
@@ -61,6 +56,10 @@ class Calculator():
     @second_number.setter
     def second_number(self, new_number):
         self._second_number = new_number
+
+    @operation.setter
+    def operation(self, operation: Operation_strategy) -> None:
+        self._operation = operation
 
     def __call__(self):
         return (self._operation.do_operation(self.first_number, self.second_number))
